@@ -20,15 +20,15 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Override
 	public List<EmployeeDTO> getAllEmployees() {
 		List<EmployeeDTO> employeesDto = new ArrayList<>();
-		
+
 		List<Employee> employees = employeeRepository.findAll();
-		
+
 		employeesDto = employees.stream().map(employee -> {
-			EmployeeDTO dto = new EmployeeDTO(employee.getFirstName(), employee.getLastName(), employee.getEmail(),
-					employee.getMobile(), employee.getHireDate());
+			EmployeeDTO dto = new EmployeeDTO(employee.getId(), employee.getFirstName(), employee.getLastName(),
+					employee.getEmail(), employee.getMobile(), employee.getHireDate());
 			return dto;
 		}).collect(Collectors.toList());
-		
+
 		return employeesDto;
 	}
 }

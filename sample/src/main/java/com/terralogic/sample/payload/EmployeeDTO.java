@@ -15,6 +15,7 @@ import lombok.ToString;
 @RequiredArgsConstructor
 @NoArgsConstructor
 public class EmployeeDTO {
+	@NonNull
 	private Long id;
 
 	@NonNull
